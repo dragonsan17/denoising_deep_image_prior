@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-%matplotlib inline
 import torch.nn as nn
 import os
 import numpy as np
