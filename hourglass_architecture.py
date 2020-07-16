@@ -2,6 +2,10 @@
   Hourglass Architecture as mentioned in the paper (https://sites.skoltech.ru/app/data/uploads/sites/25/2018/04/deep_image_prior.pdf)
   Reference : https://github.com/DmitryUlyanov/deep-image-prior/
 """
+import torch
+import torch.nn as nn
+import numpy as np
+
 def add_module(self, module):
     self.add_module(str(len(self) + 1), module)
     
