@@ -126,7 +126,7 @@ def np_to_torch(img_np):
 def torch_to_np(img_var):
     return img_var.detach().cpu().numpy()[0]
 
-def noisy(noise_typ,image, mean = 0, sigma = 50/255, s_vs_p = 0.5, amount = 0.05):
+def noisy(noise_typ,image, mean = 0, sigma = 50/255, s_vs_p = 0.5, amount = 0.05, val = 1.5):
     if noise_typ == "gauss":
       row,col,ch= image.shape
       gauss = np.random.normal(mean,sigma,(row,col,ch)).astype(float)
@@ -149,7 +149,7 @@ def noisy(noise_typ,image, mean = 0, sigma = 50/255, s_vs_p = 0.5, amount = 0.05
       return out
     elif noise_typ == "poisson":
         vals = len(np.unique(image))
-        vals = 1.5 ** np.ceil(np.log2(vals))
+        vals = val ** np.ceil(np.log2(vals))
         noisy = np.random.poisson(image * vals) / float(vals)
         return np.clip(noisy,0,1).astype(np.float32)
     elif noise_typ =="speckle":
