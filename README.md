@@ -2,9 +2,9 @@
 
 This is an implementation of __Deep Image Prior__, specifically for denoising CIFAR - 10 images. This approach is based on the idea that a randomly initialized encoder-decoder architecture can be used as an image prior for standard image inversion tasks such as denoising. This requires no training and no specific knowledge of the underlying noise model.
 
-The *'denoising_single_image.ipynb'* jupyter notebook shows inference of this approach on sample CIFAR-10 images and an F16-GT Airplane image (used in the original paper).
+The __*'denoising_single_image.ipynb'*__ jupyter notebook shows inference of this approach on sample CIFAR-10 images and an F16-GT Airplane image (used in the original paper).
 
-The *'denoising_f16gt.ipynb'* jupyter notebook shows inference of this approach on an F16-GT Airplane image (used in the original paper), on all types of noises with the same configuration. This is to show that this approach can work without knowing anything about the underlying model used for inducing noise.
+The __*'denoising_f16gt.ipynb'*__ jupyter notebook shows inference of this approach on an F16-GT Airplane image (used in the original paper), on all types of noises with the same configuration. This is to show that this approach can work without knowing anything about the underlying model used for inducing noise.
 
 There are separate implementations of various types of noises such as Gaussian, Poisson, Salt and Pepper and Speckle noise present inside the 'utils.py' file.
 
